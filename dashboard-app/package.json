@@ -1,11 +1,15 @@
 {
-  "name": "root-html-file",
+  "name": "dashboard-app",
   "description": "The single-spa root config for coexisting-angular-microfrontends",
   "main": "index.js",
   "scripts": {
     "start": "serve -s -l 4200"
   },
-  "author": "Joel Denning",
+  "author":{
+    "name": "Peter Kassenaar (credits: Joel Denning)",
+    "email": "info@kassenaar.com",
+    "url": "https://github.com/PeterKassenaar/ng-microfrontends"
+  },
   "license": "MIT",
   "devDependencies": {
     "serve": "^11.1.0"

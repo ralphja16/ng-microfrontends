@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { assetUrl } from 'src/single-spa/asset-url';
+import {Component} from '@angular/core';
+import {assetUrl} from 'src/single-spa/asset-url';
 
 @Component({
   selector: 'app1-root',
@@ -8,5 +8,5 @@ import { assetUrl } from 'src/single-spa/asset-url';
 })
 export class AppComponent {
   title = 'app1';
-  yoshiUrl = assetUrl("yoshi.png");
+  yoshiUrl = assetUrl('yoshi.png');
 }

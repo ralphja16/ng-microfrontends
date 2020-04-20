@@ -1,9 +1,11 @@
-[![Build Status](https://travis-ci.org/joeldenning/coexisting-angular-microfrontends.svg?branch=master)](https://travis-ci.org/joeldenning/coexisting-angular-microfrontends)
 
-# Coexisting Angular Microfrontends
+# ng-microfrontends
+
+Based on the works by [single-spa](https://single-spa.js.org) and [Joel Denning](https://github.com/joeldenning/coexisting-angular-microfrontends).
+
 Demo: http://coexisting-angular-microfrontends.surge.sh
 
-This is a starter-kit / example repository for people who want to have multiple angular microfrontends coexist within a single page. Each
+This is a starter-kit / example repository for people who want to have _multiple_ angular microfrontends coexist within a single page. Each
 of the angular applications was created and is managed by Angular CLI.
 
 It uses [single-spa](https://single-spa.js.org) to pull this off, which means that you can even add React, Vue, or other frameworks as
@@ -13,6 +15,18 @@ additional microfrontends.
 This github repository has four projects all in one repo. But when you do this yourself, **you'll want to have one git repo per
 angular application**. The root-html-file project should also be in its own repo. This is what lets different teams and developers be in
 charge of different microfrontends.
+
+## Sharing code?
+The projects **do not share code**. This is not a monorepo. Therefore there are no shared libraries or styles. Each projects stands on its own and uses their own `package.json`, styles, and so on.
+
+## Suggested order
+- First look at `./dashboard-app/index.html`. This is where the magic happens. It holds the surrounding dashboard application and loads all the microfrontends. **Do not change the order of the scripts**, as this would break the code.
+- The respective apps are in their own folders (Again: ideally the should be in their own repos to be worked on independently).    
+    - `./navbar` - The navbar application, glueing it all together.
+    - `./app1` - The first application
+    - `./app2` - The second application
+  
+These are all different apps, requiring their own `npm install` and `npm start`, see also below.    
 
 ## Local development -- one app at a time
 [Tutorial video](https://www.youtube.com/watch?v=vjjcuIxqIzY&list=PLLUD8RtHvsAOhtHnyGx57EYXoaNsxGrTU&index=4)
@@ -36,7 +50,7 @@ It is preferred to only run one app at a time. But if you need to run them all l
 
 ```sh
 # First terminal tab
-cd root-html-file
+cd dashboard-app
 npm install
 npm start
 ```
