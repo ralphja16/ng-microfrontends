@@ -1,4 +1,4 @@
-
+// main.single-spa.ts
 import { enableProdMode, NgZone } from '@angular/core';
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
@@ -19,7 +19,7 @@ const lifecycles = singleSpaAngular({
   },
   template: '<navbar-root />',
   Router,
-  NgZone: NgZone,
+  NgZone,
 });
 
 export const bootstrap = lifecycles.bootstrap;
